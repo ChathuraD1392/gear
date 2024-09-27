@@ -2,4 +2,6 @@
   width: 12rem;
   background-color: black;
   color: white;
+  float: left;
+  margin: 5px;
 }
