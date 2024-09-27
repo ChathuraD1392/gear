@@ -1,17 +1,16 @@
+import useProducts from "../../customHooks/useProducts";
 import ProductCard from "../ProductCard/ProductCard";
 
 const ProductList = () => {
-  const products = [
-    { id: 1, title: "Product 1", description: "Description", price: 10 },
-    { id: 1, title: "Product 1", description: "Description", price: 10 },
-    { id: 1, title: "Product 1", description: "Description", price: 10 },
-  ];
-
+  const { products, error } = useProducts();
   return (
     <>
-      {products.map((product, index) => (
-        <ProductCard key={index} product={product} />
-      ))}
+      {error && <p className="text-danger">{error}</p>}
+      <div>
+        {products.map((product, index) => (
+          <ProductCard key={index} product={product} />
+        ))}
+      </div>
     </>
   );
 };
